@@ -37,7 +37,7 @@ jQ_AJAX(document).ready(function(){
 					jQ_AJAX("#inaflash").hide(500);
 				if (data.error_title === false)
 	 				jQ_AJAX(".ok-check").show(500);
-
+				//Hello world
 
 				//if (data.error === true)
 				jQ_AJAX('#demoForm').show(500);
