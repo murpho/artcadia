@@ -24,7 +24,7 @@ if (empty($_POST['filename']) || $filename=='' ) {
 elseif (!empty($_POST['filename'])){
 	$return['error_filename'] = false;
 	$return['msg_filename'] =  $filename.' file uploaded.';
-		
+	$filename_accepted = true;	
 	//TO DO: Change this last line to show tick symbol.
 }
 
@@ -38,34 +38,34 @@ if (empty($_POST['title'])) {
 elseif (!empty($_POST['title'])){
 	$return['error_title'] = false;
 	$return['msg_title'] = '';// Pass empty string. Showing green tick on success instead.
-	$firstname= true;
+	$title= true;
 	//TO DO: Change this last line to show tick symbol.
 }
 
+if($_POST["medium"]!="oils" && $_POST["medium"]!="acrylics"
+		    && $_POST["medium"]!="watercolors" && $_POST["medium"]!="pastels"
+		    && $_POST["medium"]!="gouache" && $_POST["medium"]!="mixed media"
+		    && $_POST["medium"]!="drawing" && $_POST["medium"]!="ceramics"
+		    && $_POST["medium"]!="sculpture" && $_POST["medium"]!="blacksmith"
 
-if (empty($_POST['firstname'])) {
-	$return['error_firstname'] = true;
-	$return['msg_firstname'] = 'You did not enter your first name.';
+		    ) {
+    $return['error_medium'] = true;
+	$return['msg_medium'] = 'You did not select medium.';
 	
 }
-elseif (!empty($_POST['firstname'])){
-	$return['error_firstname'] = false;
-	$return['msg_firstname'] = 'You\'ve entered: ' . $_POST['firstname'] . '.';
-	$firstname= true;
-	//TO DO: Change this last line to show tick symbol.
+else {
+	$return['error_medium'] = false;
+	$return['msg_medium'] = '';// Pass empty string. Showing green tick on success instead.
+	$medium= true;
 }
 
-if (empty($_POST['email2'])) {
-	$return['error2'] = true;
-	$return['msg2'] = 'You did not enter you email.';
-}
-elseif (!empty($_POST['email2'])) {
-	$return['error2'] = false;
-	$return['msg2'] = 'You\'ve entered: ' . $_POST['email2'] . '.';
-	$email = true;
-}
 
-if ( ($firstname) &&  ($email) ) {
+
+
+
+
+
+if ( ($filename_accepted) &&  ($title) && ($medium)     ) {
 	$return['error'] = false;
 	$return['msg'] = 'Your details have been accepted.';
 }
