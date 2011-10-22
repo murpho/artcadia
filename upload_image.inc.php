@@ -32,13 +32,15 @@
 		
 		<p>&nbsp;</p>
 		
-		<div style="background-image:url('images/name_footer.jpg');border:1px black solid;margin:20px;">
+		<div style="background-image:url('images/name_footer.jpg'); border:1px black solid;margin:20px;">
 		<br />
-		<a href="member.php"  onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('members_home_button','','images/members-home-button-over.png',1)"><img name="members_home_button" id="members_home_button" style="border:0" src="images/members-home-button.png" alt="member's home"/></a>
+		<a href="member.php"  onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('members_home_button','','images/members-home-button-over.png',1)">
+			<img name="members_home_button" id="members_home_button" style="border:0" src="images/members-home-button.png" alt="member's home"/></a>
 		
 		
 		 <form action="" method="post" enctype="multipart/form-data">       
-		   	<table id="upload-table" width="90%" cellspacing="4" cellpadding="4">
+		   			
+		  <table id="upload-table" width="90%" cellspacing="4" cellpadding="4">
 		      <tr class="title"><td class="benefits rounded {top 10px no-webkit}"><h1>Upload Image</h1></td></tr>
 		      <tr><td>
 		      		<div id="message_ajax" style="display: none;">
@@ -48,8 +50,7 @@
                 		<img src="images/ajax-loader.gif" title="Loader" alt="Loader" />
             		</div>
 		      <?php
-				 
-				 $query_m = "SELECT * FROM visitor_messages WHERE id = 1";
+				 				 $query_m = "SELECT * FROM visitor_messages WHERE id = 1";
 				 $res_m = mysql_query($query_m) or die("Couldn't execute query. Filename table.");
 					while ($row= mysql_fetch_array($res_m)) {
 						$message =$row['message'];   
@@ -113,20 +114,23 @@
 			  		<div style="clear:both"></div>
 			  		Title:<input name="title" type="text" id="title" size="30" value="<?php echo $_POST["title"]; ?>"/><img class="ok-check" src="assets/artcadia-ok-checkbox-20.png" alt="validated ok" width="20" /></td></tr>
 		      <tr><td style="text-align:right;padding-right:100px;border:1px black solid;">Medium (Oils,ceramics etc): 
-		      <select name="medium" id="medium">
-				<option value="medium" selected="selected" id="medium">--Select--</option>
-				<option value="oils">oils</option>
-				<option value="acrylics">acrylics</option>
-				<option value="watercolors">watercolors</option>
-				<option value="pastels">pastels</option>
-				<option value="gouache">gouache</option>
-				<option value="mixed media">mixed media</option>
-				<option value="drawing">drawing</option>
-				<option value="ceramics">ceramics</option>
-				<option value="sculpture">sculpture</option>
-				<option value="blacksmith">blacksmith</option><!-- 16.10.11.gt value was sculpture in error -->
-
-			 </select></td></tr> 
+		      	    
+		      	    <div id="message_medium" style="display: none;"></div>
+			      	<select name="medium" id="medium">
+						<option value="medium" selected="selected">--Select--</option>
+						<option value="oils">oils</option>
+						<option value="acrylics">acrylics</option>
+						<option value="watercolors">watercolors</option>
+						<option value="pastels">pastels</option>
+						<option value="gouache">gouache</option>
+						<option value="mixed media">mixed media</option>
+						<option value="drawing">drawing</option>
+						<option value="ceramics">ceramics</option>
+						<option value="sculpture">sculpture</option>
+						<option value="blacksmith">blacksmith</option><!-- 16.10.11.gt value was sculpture in error -->
+					</select>
+			  		<img class="ok-check-medium" src="assets/artcadia-ok-checkbox-20.png" alt="validated ok" width="20" />
+			 </td></tr> 
 			 <tr><td style="text-align:right;padding-right:100px;border:1px black solid;">(Maximum 20 words)<br />Description: <input name="description" type="text" id="description" size="30" value="<?php echo $_POST["description"]; ?>"/></td></tr>
 			 <tr><td style="text-align:right;padding-right:100px;border:1px black solid;">Keywords: <input name="keywords" type="text" id="keywords" size="30" value="<?php echo $_POST["keywords"]; ?>"/></td></tr>
 		     <tr><td style="text-align:right;padding-right:100px;border:1px black solid;"><img src="captchav1/captcha/captcha.php" id="img" title="captcha v1 phpform.net" alt="captcha" /></td></tr>
@@ -137,10 +141,11 @@
 		  </table> 
 		  
 		  <script type="text/javascript">
-		  		//Hack to check if JavaScript is enabled.
 		  		var $valid = "JavaScriptIsValid";
 		  		if($valid == "JavaScriptIsValid") {
+		  				
 		  				document.write('<table id="upload-table-button" summary="upload" width="80%" cellspacing="0" cellpadding="0"><tr><td style="text-align:right;padding-right:100px;border:1px black solid;;background:orange;"><input type="submit" id="submit" name="submit" value="Upload"/>  </td></tr></table>');
+		 		
 		 		}
 		 		
 		 </script>		
