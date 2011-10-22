@@ -1,11 +1,8 @@
-var jQ_AJAX=jQuery.noConflict();
+ar jQ_AJAX=jQuery.noConflict();
 
 
 jQ_AJAX(document).ready(function(){
 	jQ_AJAX('#submit').click(function() {
-		var firstname = jQ_AJAX('#firstname').val(); 
-		var email = jQ_AJAX('#email').val(); 
-		var email2 = jQ_AJAX('#email2').val(); 
 		var title = jQ_AJAX('#title').val(); 
 		var filename = jQ_AJAX('#filename').val(); 
 
@@ -17,15 +14,12 @@ jQ_AJAX(document).ready(function(){
 			type : 'POST',
 			url : 'post.AJAX.php',
 			dataType : 'json',
-			data: "firstname="+firstname+"&email="+email+"&email2="+email2+"&title="+title+"&filename="+filename, 
+			data: "title="+title+"&filename="+filename, 
 			success : function(data){
 				jQ_AJAX('#waiting_ajax').hide(500);
 				jQ_AJAX('#message_ajax').removeClass().addClass((data.error === true) ? 'error' : 'success')
 					.text(data.msg).show(500);
-				jQ_AJAX('#message_firstname').removeClass().addClass((data.error_firstname === true) ? 'error_firstname' : 'success_firstname')
-					.text(data.msg_firstname).show(500);
-				jQ_AJAX('#message_email2').removeClass().addClass((data.error2 === true) ? 'error2' : 'success2')
-					.text(data.msg2).show(500);
+			
 		        jQ_AJAX('#message_title').removeClass().addClass((data.error_title === true) ? 'error_title' : 'success_title')
 					.text(data.msg_title).show(500);
 				jQ_AJAX('#message_filename').removeClass().addClass((data.error_filename === true) ? 'error_filename' : 'success_filename')
@@ -37,7 +31,7 @@ jQ_AJAX(document).ready(function(){
 					jQ_AJAX("#inaflash").hide(500);
 				if (data.error_title === false)
 	 				jQ_AJAX(".ok-check").show(500);
-				//Hello world
+
 
 				//if (data.error === true)
 				jQ_AJAX('#demoForm').show(500);
