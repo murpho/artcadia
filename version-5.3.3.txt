@@ -1,0 +1,74 @@
+5.3.3.txt
+25.05.12@gt
+ADDED: ring_size to piece.php
+TO DO: test if works if ring_size not empty
+21.05.12@gt
+DONE:
+Changed page urls to more seo friendly
+TO DO: 
+Uploader for friendship stones section.
+
+
+5.3.2.txt
+12.05.12@gt
+TO DO:
+Try basic uploader as a test.
+DONE:
+3rd party uploader works again. Solution: Upload folder made writeable.
+19.05.12@gt
+DONE: Uploader for opals and jewellery sections.
+TO DO: Uploader for friendship stones section.
+TO DO:
+!imp: Change table paintings to $category in cart.php DONE
+
+5.3.1.txt
+DONE:
+12.05.12@gt
+Added index.php redirect to root in web.config file.
+Admin files moved to admin folder.
+TO DO:!imp
+Get uploader working. Needs to work on stclaireopals.com site. Was working on stclaireconsulting.com
+Try basic uploader for w3schools and see if files upload to server.
+
+
+
+5.2.txt below
+19.04.12@gt
+TO DO:
+Make urls more seo friendly:
+19.04 opals-list.php to opalsforsale.php
+
+23.04.12@gt
+TO DO:
+Place admin files in admin folder and delete unneccessary files
+Have backup of these files in earlier versions.
+
+23.04.12@gt
+MOVED:
+21.04 member.php
+	  review.php
+	  review-admin.php
+22.04 sold.php
+	  memberu-iaf-5.php
+	  memberu-iaf-5.inc.php
+	  upload-paypal-only.php
+	  upload-paypal-only.inc.php
+	  opals-list-update.php
+	  upload-image-iaf.php
+	  upload-image-iaf.inc.php
+	  sold-opal.php
+	  sold-opal.inc.php
+	  delete-opal.php
+	  delete-opal.inc.php
+	  restore.php
+	  memberu-iaf-5-section.php
+	  memberu-iaf-5-section.inc.php
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+			
